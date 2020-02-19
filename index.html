@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>HNO - Country Name</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <style>
+      .thevaluedata {
+        font-family: "Arial Narrow Bold", sans-serif;
+        font-size: 25px;
+      }
+      .textOnMap {
+        text-align: left;
+        font-size: 9px;
+        font-style: italic;
+        z-index: 500;
+        position: absolute;
+        bottom: 10px;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+      id="mainNav"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#abo"
+                >People in Need</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services"
+                >Drivers of the Crisis</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact"
+                >Needs Overview</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="bg-primary text-white"
+      ;
+      style="background-color: #026CB6! Important;"
+    >
+      <div class="container text-center">
+        <h1>2019 - Humanitarian Needs Overview</h1>
+        <p
+          class="lead"
+          style="text-align: right; margin-right: 225px; !important"
+        >
+          Yemen
+        </p>
+      </div>
+    </header>
+
+    <section id="keyfigures" class="bg-light">
+      <div class="row blockrow">
+        <div class="offset-md-2 col-md-2">
+          <div class="col-md-12 abox">
+            <p class="keyfigures" id="peopleAssisted"></p>
+            <h6>Estimated Population</h6>
+
+            <table style="float: left;">
+              <tr>
+                <td>
+                  <img
+                    style="height: 60px; padding-right: 25px"
+                    class="img-responsive"
+                    src="images/estpeople.png"
+                  />
+                </td>
+                <td>
+                  <div id="val1" class="thevaluedata"></div>
+                  <font class="panelTitleBold">million</font>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-2" style="margin-left:10px">
+          <div class="col-md-12 abox">
+            <p class="keyfigures" id="amountTransfered"></p>
+            <h6>People in Need</h6>
+
+            <table style="float: left;">
+              <tr>
+                <td>
+                  <img
+                    style="height: 60px; padding-right: 25px"
+                    class="img-responsive"
+                    src="images/population.png"
+                  />
+                </td>
+                <td>
+                  <div id="val2" class="thevaluedata"></div>
+                  <font class="panelTitleBold">million</font>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="margin-left:10px">
+          <div class="col-md-12 abox">
+            <p
+              class="keyfigures"
+              id="numberOrgs"
+              style="font-family: 'Open-Sans';"
+            ></p>
+            <h6>People in Acute Need</h6>
+
+            <table style="float: left;">
+              <tr>
+                <td>
+                  <img
+                    style="height: 60px; padding-right: 25px"
+                    class="img-responsive"
+                    src="images/populationacute.png"
+                  />
+                </td>
+                <td>
+                  <div id="val3" class="thevaluedata"></div>
+                  <font class="panelTitleBold">million</font>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="margin-left:10px">
+          <div class="col-md-12 abox">
+            <p class="keyfigures" id="numberOrgs"></p>
+            <div style="line-height: 0.7 !Important"></div>
+
+            <p
+              class="keyfigures"
+              id="numberOrgs"
+              style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;'"
+            ></p>
+            <h6>Total Budget</h6>
+
+            <table style="float: left;">
+              <tr>
+                <td>
+                  <img
+                    style="height: 60px; padding-right: 25px"
+                    class="img-responsive"
+                    src="images/fund$.png"
+                  />
+                </td>
+                <td>
+                  <div class="thevaluedata">
+                    3.20
+                  </div>
+                  <font class="panelTitleBold">billion</font>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="abo">
+      <div class="container">
+        <div class="row">
+          <h2 class="">People in Need</h2>
+          <div class="col-md-12" id="regions_div" style="height: 645px;">
+            <p class="textOnMap">
+              The boundaries and names shown and the designations used on this
+              map do not imply official endorsement or acceptance by the United
+              Nations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>People in Need by Governorate</h2>
+            <p class="lead">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+              velit, sed quia non numquam eius modi tempora incidunt ut labore
+              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+              veniam, quis nostrum exercitationem ullam corporis suscipit
+              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+              vel eum iure reprehenderit qui in ea voluptate velit esse quam
+              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+              voluptas nulla pariatur?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Needs Overview</h2>
+            <p class="lead">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+              velit, sed quia non numquam eius modi tempora incidunt ut labore
+              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+              veniam, quis nostrum exercitationem ullam corporis suscipit
+              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+              vel eum iure reprehenderit qui in ea voluptate velit esse quam
+              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+              voluptas nulla pariatur?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Powered by &nbsp;
+          <td>
+            <a target="_blank" href="https://data.humdata.org">
+              <img
+                style="height: 17px"
+                class="img-responsive hdx"
+                src="images/HDX-logo-home.svg"
+              />
+            </a>
+          </td>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- JAVASCRIPT LIBRARY -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"
+    ></script>
+
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+    <script src="https://rawgit.com/mapbox/mapbox-gl-leaflet/master/leaflet-mapbox-gl.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // INITIAL VARIABLE
+        var yemen_hno,
+          theDataTableInit = 0,
+          human_number = d3.format(",d"),
+          SelectedRegion = "adm1name",
+          statesData = 0,
+          inneed = 0,
+          inneed_acute_pct = 0,
+          inneed_moderate_pct = 0,
+          population = 0;
+
+        var geojson;
+        var map = L.map("regions_div", {
+          //map is a global variable
+          center: [15.6999243, 47.8915271],
+          zoom: 7,
+          zoomDelta: 0.1,
+          zoomSnap: 0,
+          zoomControl: false,
+          layerControl: false,
+          attributionControl: true,
+          minZoom: 7,
+          maxZoom: 7
+        });
+        var gv_baseMap = L.mapboxGL({
+          accessToken:
+            "pk.eyJ1IjoidGhhbXJpbmYiLCJhIjoiYzA1MmJjMzI1N2E5NzNhN2I2MzU4MDkzZWU4ODQxNzAifQ.3qQApYaqLA0bGC3Z5PCnUg",
+          style: "mapbox://styles/thamrinf/ck10tppqm034k1cr0bu9mhdpl",
+          zIndex: 1
+        });
+
+        var humanNumber = d3.format(",d");
+
+        gv_baseMap.addTo(map);
+
+        $("#loadinggif").show();
+        d3.json("data/yem_admbnda_adm1.geojson").then(function(geodata) {
+          function getColor(d) {
+            return d > 1000
+              ? "#800026"
+              : d > 500
+              ? "#BD0026"
+              : d > 200
+              ? "#E31A1C"
+              : d > 100
+              ? "#FC4E2A"
+              : d > 50
+              ? "#FD8D3C"
+              : d > 20
+              ? "#FEB24C"
+              : d > 10
+              ? "#FED976"
+              : "#FFEDA0";
+          }
+
+          function style(feature) {
+            return {
+              weight: 2,
+              opacity: 1,
+              color: "white",
+              dashArray: "3",
+              fillOpacity: 0.7,
+              fillColor: getColor(feature.properties.density)
+            };
+          }
+
+          function highlightFeature(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+              weight: 5,
+              color: "#666",
+              dashArray: "",
+              fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+              layer.bringToFront();
+            }
+          }
+
+          var geojson;
+
+          function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+          }
+
+          function zoomToFeature(e) {
+            map.fitBounds(e.target.getBounds());
+          }
+
+          function onEachFeature(feature, layer) {
+            layer.on({
+              mouseover: highlightFeature,
+              mouseout: resetHighlight,
+              click: zoomToFeature
+            });
+          }
+
+          geojson = L.geoJson(geodata, {
+            style: style,
+            onEachFeature: onEachFeature
+          }).addTo(map);
+
+          //call the original data
+          d3.csv("data/yemen_hno.csv", function(data) {
+            //set the data called to variable thedata
+            yemen_hno = data;
+
+            // drawinit();
+            $("#loadinggif").hide();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
