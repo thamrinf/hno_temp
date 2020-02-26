@@ -66,12 +66,12 @@
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#services"
-                >Drivers of the Crisis</a
+                >Needs Overview</a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact"
-                >Needs Overview</a
+                >PiN by Sector</a
               >
             </li>
           </ul>
@@ -177,7 +177,7 @@
             <p
               class="keyfigures"
               id="numberOrgs"
-              style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;'"
+              style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
             ></p>
             <h6>Total Budget</h6>
 
@@ -240,27 +240,60 @@
     </section>
 
     <section id="contact">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Needs Overview</h2>
-            <p class="lead">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-              vel eum iure reprehenderit qui in ea voluptate velit esse quam
-              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-              voluptas nulla pariatur?
-            </p>
+            <h2>Number of People in Need by Sector</h2>
+            <div
+              id="pinsector"
+              class="col-md-12"
+              style="height: 450px; width: 1800px! Important;"
+            ></div>
           </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div id="wash" class="col-md-2 mx-auto" style="height: 120px;"></div>
+          <div
+            id="shelter"
+            class="col-md-2 mx-auto"
+            style="height: 120px;"
+          ></div>
+          <div
+            id="health"
+            class="col-md-2 mx-auto"
+            style="height: 120px;"
+          ></div>
+          <div
+            id="nutrition"
+            class="col-md-2 mx-auto"
+            style="height: 120px;"
+          ></div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div id="cccm" class="col-md-2 mx-auto" style="height: 120px;"></div>
+          <div
+            id="education"
+            class="col-md-2 mx-auto"
+            style="height: 120px;"
+          ></div>
+          <div
+            id="protection"
+            class="col-md-2 mx-auto"
+            style="height: 120px;"
+          ></div>
+          <div
+            id="refugee"
+            class="col-md-2 mx-auto"
+            style="height: 120px;"
+          ></div>
+          <div class="col-md-2"></div>
         </div>
       </div>
     </section>
@@ -590,6 +623,265 @@
       };
 
       var chart = new ApexCharts(document.querySelector("#pin-chart"), options);
+      chart.render();
+
+      // ------------------------------ barchart sector
+
+      var options = {
+        series: [
+          {
+            data: [44, 55, 41, 64, 22, 43, 21, 30]
+          },
+          {
+            data: [53, 32, 33, 52, 13, 44, 32, 33]
+          }
+        ],
+        chart: {
+          type: "bar",
+          height: 430
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true,
+            dataLabels: {
+              position: "top"
+            }
+          }
+        },
+        dataLabels: {
+          enabled: true,
+          offsetX: -6,
+          style: {
+            fontSize: "12px",
+            colors: ["#fff"]
+          }
+        },
+        stroke: {
+          show: true,
+          width: 1,
+          colors: ["#fff"]
+        },
+        xaxis: {
+          categories: [
+            "Food Security & Agriculture",
+            "Health",
+            "Education",
+            "Water Sanitation & Hygiene",
+            "Protection",
+            "Nutrition",
+            "Shelter & NFIs CCCM",
+            "Refugees & Migrants Multi-sector"
+          ]
+        },
+        colors: ["#003469", "#95b6df"],
+        legend: {
+          position: "bottom",
+          horizontalAlign: "left",
+          offsetX: 10
+        }
+      };
+
+      var chart = new ApexCharts(document.querySelector("#pinsector"), options);
+      chart.render();
+
+      // -----------------------------circle graph!
+      var options = {
+        series: [70],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["SHELTER"]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#shelter"), options);
+      chart.render();
+
+      // ----------------------------------------
+
+      var options = {
+        series: [30],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["HEALTH"]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#health"), options);
+      chart.render();
+
+      // --------------------------------------------
+      var options = {
+        series: [45],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["NUTRITION"]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#nutrition"), options);
+      chart.render();
+
+      // -----------------------------------------
+
+      var options = {
+        series: [40],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["EDUCATION"]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#education"), options);
+      chart.render();
+
+      //  --------------------------
+
+      var options = {
+        series: [65],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["PROTECTION"]
+      };
+
+      var chart = new ApexCharts(
+        document.querySelector("#protection"),
+        options
+      );
+      chart.render();
+      //  --------------------------
+
+      var options = {
+        series: [50],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["REFUGEE"]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#refugee"), options);
+      chart.render();
+
+      //  -------------------------
+
+      var options = {
+        series: [30],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["CCCM"]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#cccm"), options);
+      chart.render();
+
+      //  --------------------------
+
+      var options = {
+        series: [20],
+        chart: {
+          height: 200,
+          type: "radialBar"
+        },
+        fill: {
+          colors: ["#95b6df"],
+          opacity: 1
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: "70%"
+            }
+          }
+        },
+        labels: ["WASH"]
+      };
+
+      var chart = new ApexCharts(document.querySelector("#wash"), options);
       chart.render();
     </script>
   </body>
